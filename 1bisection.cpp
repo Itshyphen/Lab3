@@ -7,7 +7,7 @@ inline double funcVal(double val)
     return (val * sin(val) + cos(val));
     //return exp(val) - 3 * val;
     //return log10(val) - cos(val);
-    //return 2 * val * val * val + 4 * val * val - 4 * val - 6;
+    //return 2 * val * val * val + 4 * val * val - 4 * val - 0;
 }
 
 int main()
