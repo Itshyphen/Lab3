@@ -103,7 +103,5 @@ bool state=1;
     }
     cout<<"]"<<endl;
 
-    
-
     return 0;
 }
