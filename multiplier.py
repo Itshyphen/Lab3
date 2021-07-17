@@ -1,6 +1,5 @@
 from Gates import AND, OR, XOR
 
-
 class Binary:
 
     def __init__(self, num):
@@ -42,21 +41,61 @@ class Binary:
         self.list.append(0)
     
     def __mul__(self, other):
-        sum =[0]
+        product =[0]
         for i in range(len(other.list)-1,-1,-1):
             if (other.list[i] == 1):
-                sum = self.__add__(sum)
+                product = self.__add__(product)
             self.shiftleft()
-        return Binary(sum)
+        return Binary(product)
 
 
 
 A = Binary("1101")
-B = Binary("111")
+B = Binary("1101")
 
 print("A = ", end=''),print(A)
 
 print("B = ",end=''),print(B)
 
 print("A * B = ",end=''),print(A*B)
+
+# def halfadder(a, b):
+#     return XOR(a, b), AND(a, b)
+
+# def fulladder(a, b, c):
+#     s0, c0 = halfadder(a, b)
+#     s1, c1 = halfadder(s0, c)
+#     return s1, OR(c0, c1)
+
+
+
+# def binaryAdder(a, b, c):
+#     n = (len(a) if len(a) > len(b) else len(b))
+#     carry = c
+#     sum = [0,0,0,0,0,0,0,0] * n
+#     for i in range(0,n):  
+#         [sum[n - 1 - i], carry] = fulladder(int(a[n - 1 - i]), int(b[n - 1 - i]), carry)
+
+#     return [sum, carry]
+
+
+# def partial_product(multiplicant, multiplier):
+#     if (len(multiplier) != len(multiplicant)):
+#         print("Error")
+#         return
+    
+#     n = len(multiplier)
+#     product = "0" * 2*n
+#     carry = 0
+#     multiplicant = "0" * n + multiplicant
+
+#     for i in range(n, 0, -1):
+#         if(multiplier[i - 1] == '1'):
+#             [product, carry] = binaryAdder(product, multiplicant, carry)
+#         multiplicant = multiplicant + multiplicant[0]
+        
+#     print(product)
+
+# partial_product("1010","1100")
+
 
